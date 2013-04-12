@@ -6,13 +6,14 @@
 class PushButton
 {
 	public:
-		int pin;
-		bool state;	//button state: true/false
+		bool state;
 		int pressedValue;	//a value HIGH or LOW to indicate Pressed state
 		unsigned int pushCount;
 	protected:
+		int pin;
 		int _pinMode;
-		unsigned int lastReadingState;	//last state read from pin
+		unsigned int _state;	//button state: true/false
+		unsigned int _lastState;	//last state read from pin
 		unsigned long lastDebounceTime;  // the last time the output pin was toggled
 		unsigned long debounceDelay;
 	public:
