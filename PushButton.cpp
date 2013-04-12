@@ -1,11 +1,12 @@
 #include "PushButton.h"
 
-PushButton::PushButton(int buttonPin, int buttonPinMode /*= INPUT*/)
+PushButton::PushButton(const int buttonPin, int buttonPinMode /*= INPUT*/)
 {
 	pushCount=0;
 	debounceDelay = 50;
 	pin = buttonPin;
 	_pinMode = buttonPinMode;
+
 	pinMode(buttonPin, buttonPinMode);
 	setPressedValue(buttonPinMode == INPUT_PULLUP ? LOW : HIGH);
 }
