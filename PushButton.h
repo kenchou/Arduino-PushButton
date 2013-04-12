@@ -20,7 +20,7 @@ class PushButton
 		 * @param int buttonPin
 		 * @param int buttonPinMode INPUT or INPUT_PULLUP
 		 */
-		PushButton(int buttonPin, int buttonPinMode = INPUT);
+		PushButton(const int buttonPin, int buttonPinMode = INPUT);
 		/**
 		 * set a value to check press or release
 		 * @param bool value
