@@ -6,7 +6,7 @@
 class PushButton
 {
 	public:
-		bool state;
+		boolean state;
 		int pressedValue;	//a value HIGH or LOW to indicate Pressed state
 		unsigned int pushCount;
 	protected:
@@ -24,29 +24,29 @@ class PushButton
 		PushButton(const int buttonPin, int buttonPinMode = INPUT);
 		/**
 		 * set a value to check press or release
-		 * @param bool value
+		 * @param boolean value
 		 */
-		void setPressedValue(bool value);
-		bool getPressedValue();
+		void setPressedValue(boolean value);
+		boolean getPressedValue();
 		/**
 		 * set debounce mode
-		 * @param bool debounce
+		 * @param boolean debounce
 		 */
-		void setDebounceMode(bool debounce);
+		void setDebounceMode(boolean debounce);
 		void setDebounceThreshold(unsigned long delay = 50);
 		/**
 		 * set button state
 		 * default released
 		 */
-		void setState(bool value);
-		bool getState();
+		void setState(boolean value);
+		boolean getState();
 		/**
 		 * read pin state
-		 * @return bool
+		 * @return boolean
 		 */
-		bool read();
-		bool isPressed();
-		bool isReleased();
+		boolean read();
+		boolean isPressed();
+		boolean isReleased();
 };
 
 #endif

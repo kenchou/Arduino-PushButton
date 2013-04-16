@@ -14,12 +14,12 @@ PushButton::PushButton(const int buttonPin, int buttonPinMode /*= INPUT*/)
 /**
  * set a state value as pressd state
  */
-void PushButton::setPressedValue(bool value)
+void PushButton::setPressedValue(boolean value)
 {
 	pressedValue = value;
 }
 
-bool PushButton::getPressedValue()
+boolean PushButton::getPressedValue()
 {
 	return pressedValue;
 }
@@ -27,21 +27,21 @@ bool PushButton::getPressedValue()
 /**
  * set button state
  */
-void PushButton::setState(bool value)
+void PushButton::setState(boolean value)
 {
 	state = value;
 }
 
-bool PushButton::getState()
+boolean PushButton::getState()
 {
 	return state;
 }
 
 /**
  * set debounce mode
- * @param bool debounce
+ * @param boolean debounce
  */
-void setDebounceMode(bool debounce)
+void setDebounceMode(boolean debounce)
 {
 }
 
@@ -53,7 +53,7 @@ void setDebounceThreshold(unsigned long delay = 50)
  * read actual value from pin
  * @return int HIGH|LOW
  */
-bool PushButton::read()
+boolean PushButton::read()
 {
 	int reading = digitalRead(pin);
 	if (reading != _lastState) {
@@ -72,10 +72,10 @@ bool PushButton::read()
 	return _state;
 }
 
-bool isPressed()
+boolean isPressed()
 {
 }
 
-bool isReleased()
+boolean isReleased()
 {
 }
