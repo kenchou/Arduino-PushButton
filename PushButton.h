@@ -6,7 +6,7 @@
 class PushButton
 {
 	public:
-		boolean state;
+		
 		int pressedValue;	//a value HIGH or LOW to indicate Pressed state
 		unsigned int pushCount;
 	protected:
@@ -16,6 +16,10 @@ class PushButton
 		unsigned int _lastState;	//last state read from pin
 		unsigned long lastDebounceTime;  // the last time the output pin was toggled
 		unsigned long debounceDelay;
+
+		boolean state;
+		boolean lastState;
+		unsigned long lastStateChangeTime;
 		unsigned long keepStateDelay;
 	public:
 		/**

@@ -52,6 +52,22 @@ boolean PushButton::read()
 	return _state;
 }
 
+boolean PushButton::readState()
+{
+	int readingState = read() == pressedValue;
+	if (reading != state) {
+		lastStateChangeTime = millis();
+	}
+
+	if ((millis() - lastStateChangeTime) > keepStateDelay) {
+		state = readingState;
+	}
+
+	lastState = readingState;
+
+	return state;
+}
+
 boolean isPressed()
 {
 	return read() == pressedValue;
