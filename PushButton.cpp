@@ -5,23 +5,10 @@ PushButton::PushButton(const int buttonPin, int buttonPinMode /*= INPUT*/)
 	pushCount=0;
 	debounceDelay = 50;
 	pin = buttonPin;
-	_pinMode = buttonPinMode;
+	_pinMode = buttonPinMode;	
 
+	pressedValue = buttonPinMode == INPUT_PULLUP ? LOW : HIGH;
 	pinMode(buttonPin, buttonPinMode);
-	setPressedValue(buttonPinMode == INPUT_PULLUP ? LOW : HIGH);
-}
-
-/**
- * set a state value as pressd state
- */
-void PushButton::setPressedValue(boolean value)
-{
-	pressedValue = value;
-}
-
-boolean PushButton::getPressedValue()
-{
-	return pressedValue;
 }
 
 /**
@@ -37,16 +24,9 @@ boolean PushButton::getState()
 	return state;
 }
 
-/**
- * set debounce mode
- * @param boolean debounce
- */
-void setDebounceMode(boolean debounce)
+void setDebounceThreshold(unsigned long delay/* = 50*/)
 {
-}
-
-void setDebounceThreshold(unsigned long delay = 50)
-{
+	debounceDelay = delay;
 }
 
 /**
@@ -74,8 +54,10 @@ boolean PushButton::read()
 
 boolean isPressed()
 {
+	return read() == pressedValue;
 }
 
 boolean isReleased()
 {
+	return read() != pressedValue;
 }

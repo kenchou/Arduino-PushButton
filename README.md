@@ -1,10 +1,29 @@
 Arduino-PushButton
 ==================
 
-¹¦ÄÜ£º
-¶ÁÈ¡×´Ì¬£º
-	°´ÏÂÊ±·µ»Ø press ×´Ì¬
-	ÊÍ·ÅÊ±·µ»Ø release ×´Ì¬
+åŠŸèƒ½ï¼š
+è¯»å–çŠ¶æ€ï¼š
+* æŒ‰ä¸‹æ—¶è¿”å› press çŠ¶æ€
+* é‡Šæ”¾æ—¶è¿”å› release çŠ¶æ€
+* é•¿æŒ‰é‡Šæ”¾åä¿æŒ press çŠ¶æ€
+* å†æ¬¡é•¿æŒ‰é‡Šæ”¾åä¿æŒ release çŠ¶æ€
 
-	³¤°´ÊÍ·Åºó±£³Ö press ×´Ì¬
-	ÔÙ´Î³¤°´ÊÍ·Åºó±£³Ö release ×´Ì¬
+example:
+
+	PushButton button1(12);
+	const StatePin=13;
+	
+	void setup()
+	{
+	 pinMode(StatePin, OUTPUT);
+	}
+
+	void loop()
+	{
+		if (button1.isPressed()) {
+			digitWrite(StatePin, HIGH);
+		} else {
+			digitWrite(StatePin, LOW);
+		}
+	}
+ 

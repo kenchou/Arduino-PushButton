@@ -16,6 +16,7 @@ class PushButton
 		unsigned int _lastState;	//last state read from pin
 		unsigned long lastDebounceTime;  // the last time the output pin was toggled
 		unsigned long debounceDelay;
+		unsigned long keepStateDelay;
 	public:
 		/**
 		 * @param int buttonPin
@@ -23,16 +24,8 @@ class PushButton
 		 */
 		PushButton(const int buttonPin, int buttonPinMode = INPUT);
 		/**
-		 * set a value to check press or release
-		 * @param boolean value
+		 * set debounce delay
 		 */
-		void setPressedValue(boolean value);
-		boolean getPressedValue();
-		/**
-		 * set debounce mode
-		 * @param boolean debounce
-		 */
-		void setDebounceMode(boolean debounce);
 		void setDebounceThreshold(unsigned long delay = 50);
 		/**
 		 * set button state
